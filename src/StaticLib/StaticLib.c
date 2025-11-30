@@ -58,16 +58,15 @@ bool push_array(STACK* s, int* addr, int num)
 {
 	// ToDo: addrからはじまるnum個の整数をスタックに保存しよう
 
-	if (s == NULL || s->stack_memory == NULL) return false;
+	if (s == NULL || s->stack_memory == NULL)return false;
 	if (addr == NULL || num <= 0) return false;
-	if (s->stack_pointer + num > s->end) return false;
+	if (s->stack_pointer + num > s->end)return false;
 
 	for (int i = 0; i < num; i++) {
 		*(s->stack_pointer) = addr[i];
 		s->stack_pointer++;
 	}
 	return true;
-
 }
 
 // スタックから一つの要素を取り出す
