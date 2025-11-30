@@ -63,8 +63,8 @@ namespace UnitTest
 			int a[2] = { 9, 10 };
 			Assert::IsTrue(push_array(&s, a, 2), _T("2要素を積むのに成功する"));
 
-			Assert::AreEqual(pop(&s), 9, _T("先頭から格納されることを想定"));
-			Assert::AreEqual(pop(&s), 10, _T("２番目の要素を取り出す"));
+			Assert::AreEqual(pop(&s), 10, _T("先頭から格納されることを想定"));
+			Assert::AreEqual(pop(&s), 9, _T("２番目の要素を取り出す"));
 
 			finalize(&s);
 		}
@@ -215,8 +215,8 @@ namespace UnitTest
 			int b[2];
 			Assert::AreEqual(pop_array(&s, b, 2), 2, _T("2要素取り出す"));
 			Assert::AreEqual(b[0], 19, _T("上の要素を先頭に入れる"));
-			Assert::AreEqual(b[1], 13, _T("上から２番目の要素が2番目に入る"));
-			Assert::AreEqual(pop(&s), 17, _T("17が一番上のはず"));
+			Assert::AreEqual(b[1], 17, _T("上から２番目の要素が2番目に入る"));
+			Assert::AreEqual(pop(&s), 13, _T("17が一番上のはず"));
 			Assert::AreEqual(pop_array(&s, b, 1), 0, _T("要素がなければ取り出せない"));
 			Assert::AreEqual(b[0], 19, _T("要素は変更されていないはず"));
 			Assert::AreEqual(pop(&s), 0, _T("要素がなければ取り出せない"));
